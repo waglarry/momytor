@@ -1,0 +1,32 @@
+[
+    {
+        
+        "courseCode": "Math 101",
+        "courseName":"Mathematics",
+        "instructor":"654a163f68f5d6d0260005cc"
+        
+    },
+    {
+        
+        "courseCode": "Eng 102",
+        "courseName":"English Language",
+        "instructor":"654a163f68f5d6d0260005cb"
+        
+    },
+    {
+         
+        "courseCode": "sci 104",
+        "courseName":"Integrated Science",
+        "instructor":"654a163f68f5d6d0260005c9"
+       
+    },
+    {
+        
+        "courseCode": "Soc 105",
+        "courseName":"Social studies",
+        "instructor":"654a163f68f5d6d0260005ca"
+    }
+    
+
+    
+]

@@ -1,0 +1,160 @@
+[
+    {
+        
+        "firstName": "Dian",
+        "lastName":"Lawson",
+        "gender":"female!",
+        "class":"5",
+        "email":"dlawson@gmail.com"
+    },
+    {
+        
+        "firstName": "John",
+        "attendance":false,
+         "courseProgress": {
+            "Mathematics":100,
+            "Integrated Science":80,
+            "social Studies":60,
+            "English Language":70
+
+        },
+         "skill":{
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. He/She is able to follow instructions and complete his/her work on time. He/She is also able to focus on his/her work even when there are distractions around.",
+            "contribution":"Student is always willing to help his/her classmates with their work. He/She is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+        
+    },
+    {
+        
+        "firstName": "Ella",
+        "lastName":"Dadzie",
+        "gender":"female!",
+        "class":"4",
+        "email":"dlawsosn@gmail.com",
+        "attendance":false,
+        "courseProgress": {
+            "Mathematics":50,
+            "Integrated Science":40,
+            "social Studies":60,
+            "English Language":80
+
+        },
+         "skill":{
+            "communication":"Student is a clear and effective communicator.She is able to express her thoughts and ideas clearly and concisely, both verbally and in writing.She is also able to listen actively and respond thoughtfully to others.",
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. She is able to follow instructions and complete her work on time. She is also able to focus on her work even when there are distractions around.",
+            "contribution":"Student is always willing to help her classmates with their work. She is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+    },
+    {
+         
+         "firstName": "sammuel",
+        "lastName":"Handson",
+        "gender":"male",
+        "class":"3",
+        "email":"dlwwson@gmail.com",
+        "attendance":true,
+         "courseProgress": {
+            "Mathematics":60,
+            "Integrated Science":40,
+            "social Studies":30,
+            "English Language":80
+
+        },
+         "skill":{
+            "communication":"Student could improve his confidence in his communication skills. This could involve practicing speaking and writing in front of others and getting feedback from others on his communication skills.",
+            "sociable":" student is a sociable and outgoing student.He enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. He is able to follow instructions and complete his work on time. He is also able to focus on his work even when there are distractions around.",
+            "contribution":"Student is always willing to help his/her classmates with their work. He is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+       
+    },
+    {
+        
+        "firstName": "Micheal",
+        "lastName":"Opoku",
+        "gender":"male",
+        "class":"3",
+        "email": "dlawsosn3@gmail.com",
+        "attendance":true,
+         "courseProgress": {
+            "Mathematics":80,
+            "Integrated Science":70,
+            "social Studies":60,
+            "English Language":80
+
+        }, "skill":{
+            "communication":"Student could improve his/her use of body language to communicate his message more effectively.He could make more eye contact and use gestures to emphasize his points.",
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. He is able to follow instructions and complete his work on time. He is also able to focus on his work even when there are distractions around.",
+            "contribution":"Student is always willing to help his classmates with their work. He is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+    },
+    {
+         "firstName": "Clara",
+        "lastName":"Borlu",
+        "gender":"female",
+        "attendance":true,
+        "class":"5",
+        "email":"dlawson4@gmail.com",
+         "courseProgress": {
+            "Mathematics":56,
+            "Integrated Science":70,
+            "social Studies":40,
+            "English Language":80
+
+        },
+         "skill":{
+            "communication":"Student is an active listener.She is able to pay attention to what others are saying and ask clarifying questions.She is also able to summarize what others have said to show that she understands.",
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class.She is able to follow instructions and complete her work on time. She is also able to focus on her work even when there are distractions around.",
+            "contribution":"Student is always willing to help her classmates with their work. She is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+    },
+    {
+         "firstName": "Alice",
+        "lastName":"Fremah",
+        "gender":"female!",
+        "attendance":true,
+        "class":"5",
+        "email":"dlawson@gmweail.com",
+         "courseProgress": {
+            "Mathematics":50,
+            "Integrated Science":40,
+            "social Studies":60,
+            "English Language":80
+
+        },
+        "skill":{
+            "communication":"Student is a clear and concise writer.She is able to organize her thoughts logically and use language effectively to communicate her ideas. She is also able to edit her work carefully to ensure that it is free of errors.",
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. She is able to follow instructions and complete her work on time.She is also able to focus on her work even when there are distractions around.",
+            "contribution":"Student is always willing to help her classmates with their work. She is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+    },
+    {
+         "firstName": "Daniel",
+        "lastName":"Forson",
+        "gender":"male",
+        "class":"4",
+        "email":"dlawson@gmail.com",
+        "attendance":true,
+         "courseProgress": {
+            "Mathematics":50,
+            "Integrated Science":40,
+            "social Studies":60,
+            "English Language":80
+
+        },
+         "skill":{
+            "communication":"Student is a confident and articulate speaker. He is able to use language effectively to convey his ideas and persuade others. He is also able to adapt his communication style to different audiences.",
+            "sociable":" student is a sociable and outgoing student.She enjoys interacting with her peers and is always willing to help others.She is also a good listener and is always respectful of others opinions",
+            "Attentiveness":"Student is an attentive student who pays close attention in class. He is able to follow instructions and complete his work on time. He/She is also able to focus on his work even when there are distractions around.",
+            "contribution":"Student is always willing to help his classmates with their work. He is often seen helping other students during group projects or by explaining concepts that they are struggling with."
+        }
+    }
+    
+
+    
+]
