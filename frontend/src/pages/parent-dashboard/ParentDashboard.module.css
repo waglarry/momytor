@@ -1,0 +1,101 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #1976D2;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+  }
+
+.profileBox {
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #555;
+}
+
+  .profileDetails li {
+    display: block;
+    color: black;
+    background: #fff;
+    margin: .5rem 0;
+    padding: .5rem;
+    text-decoration: none;
+  }
+
+  
+  .profileDetails li:first-child {
+    text-align: center;
+  }
+
+
+  .logoutAndPerformance {
+    margin: 2rem .5rem 0;
+  }
+
+  .logoutAndPerformance li {
+    display: block;
+    color: #000;
+    background: #fff;
+    margin: .5rem 0;
+    padding: .5rem;
+    text-decoration: none;
+    list-style: none;
+    border-radius:  0.60856rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logoutAndPerformance li img {
+    width: 20px;
+  }
+
+  
+  .logoutAndPerformance li:hover {
+    background-color: #17A1FA;
+    color: white;
+    cursor: pointer;
+  }
+  
+  div.content {
+    margin-left: 250px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

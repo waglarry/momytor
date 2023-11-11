@@ -1,0 +1,206 @@
+.header {
+    margin: 1rem 0;
+}
+
+.header h3 span {
+    color: #1976D2;
+}
+
+.topBox {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cuurentAssignment {
+    padding: 1rem;
+    width: 450px;
+    height: 280px;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    max-width: 400px;
+    max-height: 250px;
+}
+
+.cardTile {
+    color: #000;
+    font-family: sans-serif,'Roboto';
+    font-size: 0.84625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 1.26938rem */
+}
+
+.course {
+    width: 180px;
+    height: 110px;
+    padding: .5rem;
+    border-radius: 0.89344rem;
+    background: #FFF;
+    box-shadow: 0px 1.84453px 1.84453px 0px rgba(0, 0, 0, 0.25);
+}
+
+.course .title {
+    color: #000;
+    font-family: sans-serif ,'Roboto';
+    font-size: 0.69344rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 1.04019rem */
+}
+
+.course .date {
+    color: #000;
+    font-family: sans-serif,'Roboto';
+    font-size: .5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 0.37444rem */
+    margin: 1rem 0;
+}
+
+.course .stateRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stateRow .state {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.stateRow .state span {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: sans-serif,'Roboto';
+    font-size: 0.38831rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 0.5825rem */
+    background: #F4884C;
+}
+
+.stateRow .state:last-child span {
+    background: #4829C1;
+}
+
+.stateRow .state p {
+    color: #000;
+    font-family: sans-serif,'Roboto';
+    font-size: .6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 0.60269rem */
+}
+
+.upcommingEvents {
+    padding: 1rem;
+    width: 300px;
+    height: 280px;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.eventCardTile {
+    color: #000;
+    text-align: center;
+    font-family: sans-serif,'Roboto';
+    font-size: 0.92188rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 1.26938rem */
+}
+
+.coursesEvent {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.coursesEvent li {
+    border-radius: 0.3125rem;
+    background: #FDF7F7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    list-style: none;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.coursesEvent li .date {
+    border-radius: 0.25rem;
+    background: #F4884C;
+    width: 1.5625rem;
+    height: 1.375rem;
+    flex-shrink: 0;
+    color: #FFFDFD;
+    text-align: center;
+    font-family: sans-serif,'Roboto';
+    font-size: 0.42188rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coursesEvent li .date span {
+    color: #FFFBFB;
+    text-align: center;
+    font-family: sans-serif, 'Roboto';
+    font-size: 0.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.calender {
+    padding: 1rem;
+    width: 350px;
+    height: 280px;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.calenderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomBox {
+    margin-top: 2rem;
+    padding: .5rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.34);
+}
+
+.assessment {
+    margin-top: 3rem;
+}
