@@ -76,6 +76,39 @@
   .forgotPassword:hover {
     color: #1976D2;
   }
+
+  .terms {
+    color: #565151;
+    font-family: sans-serif,'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-family: "Roboto";
+  }
+  
+  .subTitle {
+    margin-bottom: 2.5rem;
+  }
+  
+  .clearButton {
+    float: right;
+    margin: 2rem 0 4rem;
+    padding: 0.2rem 1.3rem;
+  }
   
   @media only screen and (max-width: 680px) {
   
