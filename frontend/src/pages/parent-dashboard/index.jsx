@@ -4,6 +4,7 @@ import ProfilePicture from "../../assets/images/profile.png";
 import ArrowImage from '../../assets/icons/arrow.svg'
 import Performance from '../../assets/icons/performance.svg'
 import ParentDashboardLayout from "../../components/dashboard/parent-dashboard/layout";
+import { Link } from "react-router-dom";
 
 const ParentDashboard = () => {
   return (
@@ -26,12 +27,12 @@ const ParentDashboard = () => {
         <ul className={Styles.logoutAndPerformance}>
             <li>
                 <div></div>
-                <span>Logout</span>
+                <Link className={Styles.link} to={'/'}>Logout</Link>
                 <img src={ArrowImage} alt="arrow" />
             </li>
             <li>
                 <img src={Performance} alt="performance" />
-                <span>Performance</span>
+                <Link className={Styles.link} to={'performance'}>Performance</Link>
                 <img src={ArrowImage} alt="arrow" />
             </li>
         </ul>
