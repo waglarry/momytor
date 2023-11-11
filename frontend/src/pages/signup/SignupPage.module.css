@@ -78,16 +78,17 @@
   }
   
   @media only screen and (max-width: 680px) {
-    .imageContainer {
-      display: none;
-    }
   
     .LoginForm {
-      width: 100%;
+      width: 90%;
+    }
+
+    .title {
+      font-size: 1rem;
     }
   
     .container {
-      width: 90%;
+      width: 100%;
     }
   }
   

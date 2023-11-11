@@ -120,7 +120,7 @@
   }
   
   @media only screen and (max-width: 680px) {
-    .imageContainer {
+    .leftCol {
       display: none;
     }
   
