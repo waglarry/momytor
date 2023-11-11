@@ -13,6 +13,7 @@ import axios from 'axios';
 import Brand from '../../assets/brand';
 import BackIcon from '../../components/backicon';
 import { checkPasswordHealth } from '../../functions/formInputValidation';
+import { BASE_URL } from '../../urls/auth';
 
 const SignupPage = () => {
 
@@ -60,7 +61,7 @@ const SignupPage = () => {
           if(formData?.password !== formData?.confirmPassword){
             alert("Password does not match.")
           } else {
-            await axios.post('http://localhost:8000/api/v1/verify', formData)
+            await axios.post(`${process.env.BASE_URL}/api/v1/verify`, formData)
             .then((response) => {
               setOpenedModal( prev => !prev )
               setMessage(response.data.message)
@@ -82,7 +83,7 @@ const SignupPage = () => {
 
   const handleSubmit = async () => {
 
-    await axios.post('http://localhost:8000/api/v1/signup', formData, {
+    await axios.post(`${BASE_URL}/signup`, formData, {
       headers: {
       'Authorization': `Bearer ${formData.token}`,
       'Accept': 'application/json'

@@ -8,13 +8,14 @@ import StudentStatusTab from '../statustab';
 import TableContent from '../tablecontent';
 import TeacherStudentDetails from '../teacher-student-details';
 import Header from '../header';
+import { BASE_URL } from '../../../../urls/auth';
 
 const TeacherDashboardLayout = () => {
 
   const [ childData, setChildData ] = useState(null);
 
   const getChildDetails = async () => {
-    await axios.get('http://localhost:8000/api/v1/findAllChildren')
+    await axios.get(`${BASE_URL}/findAllChildren`)
     .then((response) => {
       // console.log(response.data.child);
       setChildData(response.data.child)

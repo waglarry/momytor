@@ -12,6 +12,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
 import BackIcon from '../../components/backicon';
+import { BASE_URL } from '../../urls/auth';
 
 
 const LoginPage = () => {
@@ -24,7 +25,7 @@ const LoginPage = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
-      await axios.post('http://localhost:8000/api/v1/login', formData)
+      await axios.post(`${BASE_URL}/login`, formData)
       .then((response) => {
         alert(response.data.message)
         navigate(`/dashboard-${value.toLowerCase()}`)
