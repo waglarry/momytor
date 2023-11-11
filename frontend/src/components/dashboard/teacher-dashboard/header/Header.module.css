@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 2rem;
+    height: 50px;
+}
+
+.previousTab {
+    color: #000;
+    text-align: right;
+    font-family: Arial;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.04375rem;
+}
+
+.currentTab {
+    color: #1976D2;
+    font-family: Arial;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.04375rem;
+}

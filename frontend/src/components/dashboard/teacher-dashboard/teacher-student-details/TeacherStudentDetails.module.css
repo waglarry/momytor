@@ -1,0 +1,102 @@
+.rightSideBar {
+    height: 100%;
+    width: 20rem;
+    background: #FFF;
+}
+
+.studentDetails {
+    background: #FFF;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    height: 80%;
+    margin-top: 2rem;
+    border-radius: .5rem 0 0 .5rem;
+    padding: 1rem;
+}
+
+.headerTitle {
+    color: rgba(35, 50, 85, 0.80);
+    font-family: sans-serif, 'Gilroy-SemiBold';
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.studentInfoDetails {
+    overflow-y: auto;
+    height: 400px;
+    max-width: 300px;
+}
+
+.studentInfoDetails::-webkit-scrollbar {
+    width: 0;
+}
+
+.studentInfo {
+    margin-bottom: .5rem;
+}
+
+.title {
+    color: rgba(35, 50, 85, 0.80);
+    font-family: Inter;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.0125rem;
+    text-transform: uppercase;
+}
+
+.value {
+    color: rgba(35, 50, 85, 0.80);
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.01875rem;
+    text-transform: uppercase;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress span {
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02188rem;
+}
+
+.progressBar {
+    width: 80%;
+}
+
+.operationButtons {
+    border-radius: 0.5625rem;
+    background: #D9D9D9;
+    height: 4.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.operationButtons .button {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

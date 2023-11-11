@@ -1,0 +1,20 @@
+.layout {
+    width: 100%;
+    display: flex;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.content {
+    width: 100%;
+    margin-right: 1rem;
+    border-right: 2px solid rgba(127, 189, 228, 0.30);
+}
+
+.card {
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    border: 1px solid #F8F8F8;
+    background: #F8F8F8;
+    width: 95%;
+    margin: 0 auto;
+}
