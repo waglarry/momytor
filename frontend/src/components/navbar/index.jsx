@@ -2,7 +2,7 @@ import { Autocomplete, Group, rem } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 import Brand from '../../assets/brand';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const links = [
   { link: '/', label: 'HOME' },
@@ -14,13 +14,13 @@ const links = [
 function Navbar() {
 
   const items = links.map((link) => (
-    <Link
+    <NavLink
       key={link.label}
       to={link.link}
       className={classes.link}
     >
       {link.label}
-    </Link>
+    </NavLink>
   ));
 
   return (
