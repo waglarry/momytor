@@ -116,7 +116,7 @@ const LoginPage = () => {
               <Link className={Styles.forgotPassword} to={'/'}>Forgot your password?</Link>
             </div>
 
-            <Button variant="filled" radius="md">Sign In</Button>
+            <Button variant="filled" radius="md" onClick={handleFormSubmit}>Sign In</Button>
           </form>
         </div>
       </div>
