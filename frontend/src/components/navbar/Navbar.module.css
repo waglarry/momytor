@@ -1,0 +1,27 @@
+.header {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.inner {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: 500;
+
+  color: #716B6B;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.035rem;
+}
