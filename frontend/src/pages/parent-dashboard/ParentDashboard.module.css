@@ -54,7 +54,6 @@
 
   .logoutAndPerformance li {
     display: block;
-    color: #000;
     background: #fff;
     margin: .5rem 0;
     padding: .5rem;
@@ -64,6 +63,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .logoutAndPerformance li .link {
+    color: #000;
   }
 
   .logoutAndPerformance li img {
