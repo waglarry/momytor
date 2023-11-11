@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.content {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0 .1rem;
+}
+
+.content p {
+    color: #7B7979;
+    font-family: sans-serif, 'Poppins';
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.buttons {
+    display: flex;
+    gap: 2rem;
+}
