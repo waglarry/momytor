@@ -1,0 +1,80 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.content {
+    width: 50%;
+    padding: 2.5rem 0;
+}
+
+.content .title {
+    font-size: 3rem;
+    font-family: sans-serif, 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 102.023%;
+    font-size: 3.04463rem;
+    letter-spacing: .1rem;
+}
+
+.content .subContent {
+    margin: 2rem 0;
+    color: #616164;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 99.5%;
+    letter-spacing: -0.0375rem;
+    width: 90%;
+}
+
+.heroImage {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImage .KidsWithBooks {
+    width: 32.4375rem;
+}
+
+.divider {
+    width: 100%;
+    max-width: 100%;
+}
+
+.divider img {
+    width: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 680px) {
+    .heroImage {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        padding-left: 2rem;
+    }
+
+    .hero {
+        align-items: center;
+    }
+
+    .content .title {
+        font-size: 2rem;
+    }
+
+    .content .subContent {
+        font-size: 1rem;
+    }
+}
