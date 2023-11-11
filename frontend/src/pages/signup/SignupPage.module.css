@@ -1,0 +1,93 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .LoginForm {
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 4px 4px 20px 7px rgba(0, 0, 0, 0.08);
+  }
+  
+  .container {
+    width: 70%;
+    height: 90%;
+    padding: 1rem 0;
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    margin: 1rem 0;
+    color: #042443;
+    text-align: center;
+    font-family: sans-serif, 'Roboto';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .formBox {
+    width: 90%;
+  }
+  
+  .inputField {
+    margin: 1rem 0;
+  }
+  
+  .forgotPasswordRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox {
+    color: #565151;
+    font-family: Roboto;
+    font-style: normal;
+    line-height: normal;
+  }
+  
+  .forgotPassword {
+    color: #565151;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+  
+  .forgotPassword:hover {
+    color: #1976D2;
+  }
+  
+  @media only screen and (max-width: 680px) {
+    .imageContainer {
+      display: none;
+    }
+  
+    .LoginForm {
+      width: 100%;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  }
+  
