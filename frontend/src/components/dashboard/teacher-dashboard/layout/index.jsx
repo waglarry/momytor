@@ -13,16 +13,28 @@ import { BASE_URL } from '../../../../urls/auth';
 const TeacherDashboardLayout = () => {
 
   const [ childData, setChildData ] = useState(null);
+  const [ selectedChild, setSelectedChild ] = useState(null);
 
   const getChildDetails = async () => {
     await axios.get(`${BASE_URL}/findAllChildren`)
     .then((response) => {
-      // console.log(response.data.child);
       setChildData(response.data.child)
     })
     .catch((error) => {
       console.log(error);
     })
+  }
+
+  const handleSelectedChild = (data) => {
+    setSelectedChild(data);
+  }
+
+  const handleSearchTerm = (value) => {
+    console.log(value);
+
+    // const filteredValue = childData?.filter(newData => newData[key] === value);
+
+    // return filteredValue.length > 0 ? filteredValue[0] : null
   }
 
   useLayoutEffect(() => {
@@ -34,15 +46,15 @@ const TeacherDashboardLayout = () => {
         <div className={Styles.content}>
             <Header />
             <div className={Styles.card}>
-              <TableActionsTab />
+              <TableActionsTab childData={childData} />
               <Divider size="xs" />
-              <FilterBar />
+              <FilterBar childData={childData} />
               <Divider size="xs" />
-              <StudentStatusTab />
-              <TableContent childData={childData} />
+              <StudentStatusTab childData={childData} />
+              <TableContent childData={childData} onSelect={handleSelectedChild} />
             </div>
         </div>
-        <TeacherStudentDetails childData={childData} />
+        <TeacherStudentDetails childData={selectedChild} />
     </section>
   )
 }
