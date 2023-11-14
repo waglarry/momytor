@@ -18,21 +18,26 @@ import { BASE_URL } from '../../urls/auth';
 const LoginPage = () => {
 
   const [ formData, setFormData ] = useState({})
-  const [value, setValue] = useState('');
+  const [ value, setValue ] = useState('');
 
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
-      await axios.post(`${BASE_URL}/login`, formData)
+      await axios.post('http://localhost:8000/api/v1/login', formData)
       .then((response) => {
-        alert(response.data.message)
+        alert(response?.data?.message)
+
+        // Navigate user to dashboard if succesfully logged in
         navigate(`/dashboard-${value.toLowerCase()}`)
+
+        console.log(response);
+        localStorage.setItem('token', response?.data?.token)
       })
-      .catch((err) => {
-        console.log(err);
-        // alert("All fields are required")
+      .catch((error) => {
+        console.log(error);
+        alert(error.message)
       })
 
       
