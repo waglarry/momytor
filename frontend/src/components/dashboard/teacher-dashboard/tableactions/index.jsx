@@ -2,7 +2,7 @@ import React from 'react'
 import classes from '../../../../css-modules/MantineInput.module.css';
 import { Button, Select } from '@mantine/core';
 
-const TableActionsTab = ({ childData }) => {
+const TableActionsTab = ({ childData, printTable }) => {
 
   return (
     <div style={{
@@ -27,7 +27,7 @@ const TableActionsTab = ({ childData }) => {
             alignItems: 'center',
             gap: '.5rem'
         }}>
-            <button style={{
+            <button onClick={() => printTable()} style={{
                 width: '5rem',
                 height: '2.3rem',
                 background: '#fff',
