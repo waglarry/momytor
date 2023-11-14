@@ -85,9 +85,8 @@
     height: 4.5rem;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: .5rem;
 }
 
 .operationButtons .button {
