@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Styles from './TeacherStudentDetails.module.css'
-// import DeleteIcon from '../../assets/icons/delete-icon.svg'
+import DeleteIcon from '../../../../assets/icons/delete-icon.svg'
 // import EditIcon from '../../assets/icons/edit-icon.svg'
 // import UploadIcon from '../../assets/icons/upload-icon.svg'
 import { Progress } from '@mantine/core';
 import UserDisplay from '../userdisplay';
 
-const TeacherStudentDetails = ({ childData }) => {
+const TeacherStudentDetails = (data) => {
     
   return (
     <div className={Styles.rightSideBar}>
@@ -17,75 +17,67 @@ const TeacherStudentDetails = ({ childData }) => {
             <div className={Styles.studentInfoDetails}>
                 <div className={Styles.studentInfo}>
                     <label className={Styles.title} htmlFor="title">FULL NAME</label>
-                    <p className={Styles.value}>FRANK ADDO</p>
+                    <p className={Styles.value}>{ data.childData?.firstName } { data.childData?.lastName }</p>
                 </div>
                 <div className={Styles.studentInfo}>
                     <label className={Styles.title} htmlFor="title">CLASS</label>
-                    <p className={Styles.value}>JHS 3</p>
+                    <p className={Styles.value}>{ data.childData?.class }</p>
                 </div>
                 <div className={Styles.studentInfo}>
                     <label className={Styles.title} htmlFor="title">GENDER</label>
-                    <p className={Styles.value}>FEMALE</p>
+                    <p className={Styles.value}>{ data.childData?.gender }</p>
                 </div>
                 <div className={Styles.studentInfo}>
                     <label className={Styles.title} htmlFor="title">EMAIL</label>
-                    <p className={Styles.value}>michelleliton@gmail.com</p>
+                    <p className={Styles.value}>{data.childData?.email}</p>
                 </div>
-                {
-                    childData?.map((data) => (
-                        <>
-                        <div className={Styles.studentInfo}>
-                            <label className={Styles.title} htmlFor="title">MATHEMATICS</label>
-                            <div className={Styles.progress}>
-                                <div className={Styles.progressBar}>
-                                    <Progress size="sm" value={data?.courseProgress["English Language"]} />
-                                </div>
-                                <span>{data.courseProgress["English Language"]}%</span>
-                            </div>
+
+                <div className={Styles.studentInfo}>
+                    <label className={Styles.title} htmlFor="title">MATHEMATICS</label>
+                    <div className={Styles.progress}>
+                        <div className={Styles.progressBar}>
+                            <Progress size="sm" value={data?.childData?.courseProgress["Mathematics"]} />
                         </div>
-                        <div className={Styles.studentInfo}>
-                            <label className={Styles.title} htmlFor="title">MATHEMATICS</label>
-                            <div className={Styles.progress}>
-                                <div className={Styles.progressBar}>
-                                    <Progress size="sm" value={data?.courseProgress["Integrated Science"]} />
-                                </div>
-                                <span>{data?.courseProgress["Integrated Science"]}%</span>
-                            </div>
+                        <span>{data?.childData?.courseProgress["Mathematics"]}%</span>
+                    </div>
+                </div>
+                <div className={Styles.studentInfo}>
+                    <label className={Styles.title} htmlFor="title">ENGLISH</label>
+                    <div className={Styles.progress}>
+                        <div className={Styles.progressBar}>
+                            <Progress color="red" size="sm" value={data?.childData?.courseProgress["English Language"]} />
                         </div>
-                        <div className={Styles.studentInfo}>
-                            <label className={Styles.title} htmlFor="title">ENGLISH</label>
-                            <div className={Styles.progress}>
-                                <div className={Styles.progressBar}>
-                                    <Progress color="red" size="sm" value={data?.courseProgress["social Studies"]} />
-                                </div>
-                                <span>{data?.courseProgress["social Studies"]}%</span>
-                            </div>
+                        <span>{data?.childData?.courseProgress["English Language"]}%</span>
+                    </div>
+                </div>
+                <div className={Styles.studentInfo}>
+                    <label className={Styles.title} htmlFor="title">SCIENCE</label>
+                    <div className={Styles.progress}>
+                        <div className={Styles.progressBar}>
+                            <Progress color="#E2DB30" size="sm" value={data?.childData?.courseProgress["Integrated Science"]} />
                         </div>
-                        <div className={Styles.studentInfo}>
-                            <label className={Styles.title} htmlFor="title">SCIENCE</label>
-                            <div className={Styles.progress}>
-                                <div className={Styles.progressBar}>
-                                    <Progress color="#E2DB30" size="sm" value={data?.courseProgress["English Language"]} />
-                                </div>
-                                <span>{data?.courseProgress["English Language"]}%</span>
-                            </div>
+                        <span>{data?.childData?.courseProgress["Integrated Science"]}%</span>
+                    </div>
+                </div>
+                <div className={Styles.studentInfo}>
+                    <label className={Styles.title} htmlFor="title">SOCIAL STUDIES</label>
+                    <div className={Styles.progress}>
+                        <div className={Styles.progressBar}>
+                            <Progress color='green' size="sm" value={data?.childData?.courseProgress["social Studies"]} />
                         </div>
-                        </>
-                    ))
-                }
+                        <span>{data?.childData?.courseProgress["social Studies"]}%</span>
+                    </div>
+                </div>
             </div>
             <div className={Styles.operationButtons}>
                 <button className={Styles.button}>
-                    {/* <img src={UploadIcon} alt="Upload Icon" /> */}
+                    <img src={DeleteIcon} alt="Upload Icon" />
                 </button>
                 <button className={Styles.button}>
-                    {/* <img src={EditIcon} alt="Upload Icon" /> */}
+                    <img src={DeleteIcon} alt="Upload Icon" />
                 </button>
                 <button className={Styles.button}>
-                    {/* <img src={DeleteIcon} alt="Upload Icon" /> */}
-                </button>
-                <button className={Styles.button}>
-                    {/* <img src={DeleteIcon} alt="Upload Icon" /> */}
+                    <img src={DeleteIcon} alt="Upload Icon" />
                 </button>
             </div>
           </div>
