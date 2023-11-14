@@ -1,0 +1,28 @@
+Hello! Run this Command First -> pip install -r requirements.txt
+
+
+
+
+Register Parent [POST]
+endpoint - 127.0.0.1:8000/signup/parent/
+
+Teacher and Parent Login [POST]
+endpoint - 127.0.0.1:8000/login/
+
+Teacher and Parent Logout[POST]
+endpoint - 127.0.0.1:8000/logout/
+
+Update Parent Profile [PUT]
+endpoint - 127.0.0.1:8000/update_parent_profile/
+
+
+Update Teacher Details[GET]
+endpoint - 127.0.0.1:8000/get_teacher_details/
+
+Get Parent Details[GET]
+endpoint - 127.0.0.1:8000/get_parent_details/
+
+
+Get Child Details[GET]
+endpoint - 127.0.0.1:8000/get_child_details/
+
