@@ -1,0 +1,65 @@
+.section {
+    height: 100vh;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-around;
+    height: 20.25rem;
+}
+
+.leftCol {
+    width: 30%;
+}
+
+.rightCol img {
+    width: 300px;
+}
+
+.title {
+    color: #000;
+    font-family: sans-serif ,'Roboto';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 102.023%; /* 2.55056rem */
+}
+
+.content {
+    color: #000;
+    margin: 1.9rem 0 1rem;
+    font-family: sans-serif ,'Roboto';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 102.023%; /* 0.89269rem */
+}
+
+.readMore {
+    color: #17A1FA;
+    font-family: sans-serif ,'Roboto';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 102.023%; /* 1.14775rem */
+    letter-spacing: -0.05625rem;
+}
+
+.card {
+    border-radius: 0.25rem;
+    background: rgba(25, 118, 210, 0.59);
+    width: 26.875rem;
+    height: 14.3125rem;
+    flex-shrink: 0;
+    padding: 1rem 2rem;
+}
+
+.card .content {
+    color: #FFF;
+    font-family: sans-serif ,'Poppins';
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 98.25%; /* 0.92113rem */
+    letter-spacing: 0.08438rem;
+}
