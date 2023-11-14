@@ -5,6 +5,10 @@ import { Button } from '@mantine/core';
 import HeroImage from '../../assets/images/hero-woman.svg'
 import Header from '../../components/header';
 import CurvesDivider from '../../assets/images/home-bottom-curves.svg'
+import Services from '../services';
+import Activities from '../activities';
+import About from '../about';
+import Footer from '../footer';
 
 const HomePage = () => {
   return (
@@ -34,6 +38,11 @@ const HomePage = () => {
       <div className={Styles.divider}>
         <img src={CurvesDivider} alt="curves divider" />
       </div>
+
+      <Services />
+      <Activities />
+      <About />
+      <Footer />
     </section>
   )
 }
