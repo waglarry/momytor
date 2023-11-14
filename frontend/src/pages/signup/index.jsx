@@ -6,7 +6,6 @@ import { FiMail } from 'react-icons/fi';
 import { AiOutlineLock } from 'react-icons/ai';
 import { Button, TextInput, rem } from '@mantine/core';
 import { PasswordInput } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import axios from 'axios';
@@ -61,7 +60,7 @@ const SignupPage = () => {
           if(formData?.password !== formData?.confirmPassword){
             alert("Password does not match.")
           } else {
-            await axios.post(`${process.env.BASE_URL}/api/v1/verify`, formData)
+            await axios.post('http://localhost:8000/api/v1/verify', formData)
             .then((response) => {
               setOpenedModal( prev => !prev )
               setMessage(response.data.message)
@@ -72,6 +71,7 @@ const SignupPage = () => {
             })
             .catch((error) => {
               console.log(error);
+              alert(error.message)
               setMessage(error.data.message)
             })
           }
