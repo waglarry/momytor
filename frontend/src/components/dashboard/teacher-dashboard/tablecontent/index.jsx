@@ -1,5 +1,6 @@
-import { Table } from '@mantine/core';
+import { Loader, Table } from '@mantine/core';
 import { Pagination, Button } from '@mantine/core';
+import Styles from './TableContent.module.css'
 
 const present = <Button variant="light" color="green">Present</Button>;
 const absent = <Button variant="light" color="red">Absent</Button>;
@@ -11,7 +12,7 @@ const TableContent = ({ childData, onSelect }) => {
   }
 
   const rows = childData && childData.map((child, index) => (
-    <Table.Tr key={child._id} onClick={() => handleOnSelect(child)}>
+    <Table.Tr key={child._id} className={Styles.tableRow} onClick={() => handleOnSelect(child)}>
       <Table.Td>{child.firstName}</Table.Td>
       <Table.Td>{child.lastName}</Table.Td>
       <Table.Td>{child.gender}</Table.Td>
@@ -22,7 +23,7 @@ const TableContent = ({ childData, onSelect }) => {
   ));
 
   return (
-    <div style={{ backgound: '#ffffff', filter: 'drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.50))' }}>
+    <div className={Styles.tableContainer}>
       <Table style={{ textAlign: 'left' }} stickyHeader verticalSpacing="md" stickyHeaderOffset={60}>
           <Table.Tr>
             <Table.Th>FIRST NAME</Table.Th>
@@ -34,6 +35,7 @@ const TableContent = ({ childData, onSelect }) => {
           </Table.Tr>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
+      {!rows && <Loader className={Styles.loader} color="blue" size="lg" type="dots" />}
       <div style={{
         display: "flex",
         justifyContent: "flex-end",
