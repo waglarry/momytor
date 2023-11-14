@@ -1,27 +1,23 @@
 import { Table } from '@mantine/core';
 import { Pagination, Button } from '@mantine/core';
 
-const elements = [
-  { refId: 6, mass: 12.011, symbol: 'C', name: 'Carbon', button: <Button variant="light" color="green">Present</Button> },
-  { refId: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen', button: <Button variant="light" color="red">Absent</Button> },
-  { refId: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium', button: <Button variant="light" color="red">Absent</Button> },
-  { refId: 56, mass: 137.33, symbol: 'Ba', name: 'Barium', button: <Button variant="light" color="green">Present</Button> },
-  { refId: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium', button: <Button variant="light" color="red">Absent</Button> },
-  { refId: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium', button: <Button variant="light" color="green">Present</Button> },
-];
 const present = <Button variant="light" color="green">Present</Button>;
 const absent = <Button variant="light" color="red">Absent</Button>;
 
-const TableContent = ({ childData }) => {
+const TableContent = ({ childData, onSelect }) => {
 
-  const rows = childData && childData.map((child) => (
-    <Table.Tr key={child._id}>
+  const handleOnSelect = (data) => {
+    onSelect(data);
+  }
+
+  const rows = childData && childData.map((child, index) => (
+    <Table.Tr key={child._id} onClick={() => handleOnSelect(child)}>
       <Table.Td>{child.firstName}</Table.Td>
       <Table.Td>{child.lastName}</Table.Td>
       <Table.Td>{child.gender}</Table.Td>
       <Table.Td>{child.gender}</Table.Td>
       <Table.Td>{child.class}</Table.Td>
-      <Table.Td>{child.attendance ? present : absent}</Table.Td>
+      <Table.Td >{child.attendance ? present : absent}</Table.Td>
     </Table.Tr>
   ));
 
@@ -43,7 +39,7 @@ const TableContent = ({ childData }) => {
         justifyContent: "flex-end",
         marginTop: '1rem'
       }}>
-        <Pagination total={10} color="#1976D2 " size="sm" withEdges />
+        <Pagination total={childData?.length} color="#1976D2 " size="sm" withEdges />
       </div>
     </div>
   );
