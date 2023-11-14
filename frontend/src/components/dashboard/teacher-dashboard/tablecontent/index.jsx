@@ -11,7 +11,7 @@ const TableContent = ({ childData, onSelect }) => {
     onSelect(data);
   }
 
-  const rows = childData && childData.map((child, index) => (
+  const rows = childData && childData.map((child) => (
     <Table.Tr key={child._id} className={Styles.tableRow} onClick={() => handleOnSelect(child)}>
       <Table.Td>{child.firstName}</Table.Td>
       <Table.Td>{child.lastName}</Table.Td>
@@ -24,8 +24,8 @@ const TableContent = ({ childData, onSelect }) => {
 
   return (
     <div className={Styles.tableContainer}>
-      <Table style={{ textAlign: 'left' }} stickyHeader verticalSpacing="md" stickyHeaderOffset={60}>
-          <Table.Tr>
+      <Table style={{ textAlign: 'left' }} verticalSpacing="md" stickyHeader stickyHeaderOffset={100}>
+          <Table.Tr className={Styles.tableHead}>
             <Table.Th>FIRST NAME</Table.Th>
             <Table.Th>LAST NAME</Table.Th>
             <Table.Th>EMAIL</Table.Th>
@@ -35,14 +35,9 @@ const TableContent = ({ childData, onSelect }) => {
           </Table.Tr>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
+      
       {!rows && <Loader className={Styles.loader} color="blue" size="lg" type="dots" />}
-      <div style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        marginTop: '1rem'
-      }}>
-        <Pagination total={childData?.length} color="#1976D2 " size="sm" withEdges />
-      </div>
+
     </div>
   );
 }
