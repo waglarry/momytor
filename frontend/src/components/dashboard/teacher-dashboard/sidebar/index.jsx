@@ -8,13 +8,15 @@ import {
   IconLogout,
   IconMessage,
   IconUser,
-  IconHelp
+  IconHelp,
+  IconHome
 } from '@tabler/icons-react';
 import classes from './TeacherDashboardSidebar.module.css';
 import Brand from '../../../../assets/brand'
 import { Link } from 'react-router-dom';
 
 const data = [
+  { link: '/', label: 'Dashboard', icon: IconHome },
   { link: 'chats', label: 'Chats', icon: IconMessage },
   { link: 'notifications', label: 'Notifications', icon: IconBellRinging },
   { link: 'students', label: 'Students', icon: IconReceipt2 },
