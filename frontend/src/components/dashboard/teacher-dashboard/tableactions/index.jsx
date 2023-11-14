@@ -1,8 +1,9 @@
 import React from 'react'
 import classes from '../../../../css-modules/MantineInput.module.css';
-import { Select } from '@mantine/core';
+import { Button, Select } from '@mantine/core';
 
-const TableActionsTab = () => {
+const TableActionsTab = ({ childData }) => {
+
   return (
     <div style={{
         height: 50,
@@ -19,7 +20,7 @@ const TableActionsTab = () => {
             fontWeight: '500',
             lineHeight: 'normal',
             letterSpacing: '0.0175rem',
-        }}>Showing 1 - 3 of 5 students</p>
+        }}>Showing {childData?.length} students</p>
         <div style={{
             display: 'flex',
             justifyContent: 'center',
@@ -53,20 +54,7 @@ const TableActionsTab = () => {
                 classNames={classes}
                 // onChange={handleInputChange}
             />
-            <button style={{
-                width: '10rem',
-                height: '2.3rem',
-                background: '#233255',
-                border: 'none',
-                borderRadius: 3,
-                color: '#FDFDF5',
-                fontFamily: 'Inter',
-                fontSize: '.8rem',
-                fontStyle: 'normal',
-                fontWeight: '500',
-                lineHeight: 'normal',
-                letterSpacing: '0.04rem',
-            }}>CREATE STUDENT</button>
+            <Button color='gray'>CREATE STUDENT</Button>
         </div>
     </div>
   )
