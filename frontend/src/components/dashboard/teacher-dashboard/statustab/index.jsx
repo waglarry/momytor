@@ -1,6 +1,20 @@
 import React from 'react'
 
-const StudentStatusTab = () => {
+const StudentStatusTab = ({ childData }) => {
+
+    let numberOfPresentStudents = 0;
+    let numberOfAbsentStudent = 0;
+
+    childData && childData?.map((data) => {
+        if(data.attendance === true){
+            numberOfPresentStudents += 1;
+        }
+
+        if(data.attendance === false){
+            numberOfAbsentStudent += 1;
+        }
+    })
+
   return (
     <div style={{
         margin: '1rem .5rem',
@@ -28,7 +42,7 @@ const StudentStatusTab = () => {
                 justifyContent: 'center',
                 fontSize: 12,
                 borderRadius: 3
-            }}>7</span>
+            }}>{childData?.length}</span>
         </div>
         <div style={{
             display: 'flex',
@@ -50,7 +64,7 @@ const StudentStatusTab = () => {
                 justifyContent: 'center',
                 fontSize: 12,
                 borderRadius: 3
-            }}>5</span>
+            }}>{numberOfPresentStudents}</span>
         </div>
         <div style={{
             display: 'flex',
@@ -72,7 +86,7 @@ const StudentStatusTab = () => {
                 justifyContent: 'center',
                 fontSize: 12,
                 borderRadius: 3
-            }}>2</span>
+            }}>{numberOfAbsentStudent}</span>
         </div>
     </div>
   )
