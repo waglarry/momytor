@@ -2,8 +2,11 @@ import React from 'react'
 import Styles from './Layout.module.css'
 import Attendace from '../table/Attendace'
 import Assessment from '../table/Assessment'
-// import { Calendar, CalendarHeader } from '@mantine/dates';
-// import { Indicator } from '@mantine/core';
+import dayjs from 'dayjs';
+import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
 const ParentDashboardLayout = () => {
   return (
@@ -100,19 +103,13 @@ const ParentDashboardLayout = () => {
             </div>
             <div className={Styles.calender}>
                 <div className={Styles.calenderBox}>
-                    {/* <Calendar
-                        static
-                        size="xs"
-                        w={300}
-                        renderDay={(date) => {
-                            const day = date.getDate();
-                            return (
-                            <Indicator size={6} color="red" offset={-2} disabled={day !== 16}>
-                                <div>{day}</div>
-                            </Indicator>
-                            );
-                        }}
-                    /> */}
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={['DateCalendar', 'DateCalendar']}>
+                        <DemoItem>
+                            <DateCalendar defaultValue={dayjs('2022-04-17')} readOnly />
+                        </DemoItem>
+                    </DemoContainer>
+                </LocalizationProvider>
                 </div>
             </div>
         </div>
