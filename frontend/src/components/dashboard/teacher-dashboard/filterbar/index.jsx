@@ -1,14 +1,18 @@
-import { CloseButton, Input, Select, rem } from '@mantine/core'
-import React from 'react'
-import { FiSearch } from 'react-icons/fi';
+import {CloseButton, Input, Select, rem } from '@mantine/core'
+import React, { useState } from 'react'
 import classes from '../../../../css-modules/MantineInput.module.css';
+import { IconSearch } from '@tabler/icons-react';
 
 const studentClass = ['Primary 1', 'Primary 2', 'Primary 3', 'Primary 4', 'JHS 1', 'JHS 2', 'JHS 3'];
-const subjects = ['Mathematics', 'Science', 'Social Studies', 'English']
+const subjects = ['Mathematics', 'Science', 'Social Studies', 'English'];
 
-const FilterBar = () => {
+const FilterBar = ({ setSearchTerm }) => {
 
-    const seacrhIcon = <FiSearch style={{ width: rem(16), height: rem(16) }} />;
+    const handleSearchInputChange = (event) => {
+        (event?.currentTarget) ? setSearchTerm(event?.currentTarget?.value) : setSearchTerm(event)
+    }
+
+    const seacrhIcon = <IconSearch style={{ width: rem(16), height: rem(16) }} />;
 
   return (
     <div style={{
@@ -29,17 +33,9 @@ const FilterBar = () => {
                 size="sm"
                 radius="sm"
                 variant="filled"
-                // value={value}
                 leftSection={seacrhIcon}
-                // onChange={(event) => setValue(event.currentTarget.value)}
+                onChange={handleSearchInputChange}
                 rightSectionPointerEvents="all"
-                rightSection={
-                <CloseButton
-                    aria-label="Clear input"
-                    // onClick={() => setValue('')}
-                    // style={{ display: value ? undefined : 'none' }}
-                />
-                }
             />
             <Select
                 size='sm'
@@ -47,10 +43,10 @@ const FilterBar = () => {
                 variant="filled" 
                 leftSectionPointerEvents="none"
                 comboboxProps={{ withinPortal: true }}
-                data={['Male', 'Female']}
+                data={['Male', 'Female', 'Others']}
                 placeholder="Gender"
                 classNames={classes}
-                // onChange={handleInputChange}
+                onChange={handleSearchInputChange}
             />
             <Select
                 size='sm'
@@ -61,7 +57,7 @@ const FilterBar = () => {
                 data={studentClass}
                 placeholder="Class"
                 classNames={classes}
-                // onChange={handleInputChange}
+                onChange={handleSearchInputChange}
             />
         </div>
         <Select
@@ -73,7 +69,7 @@ const FilterBar = () => {
             data={subjects}
             placeholder="Subject"
             classNames={classes}
-            // onChange={handleInputChange}
+            onChange={handleSearchInputChange}
         />
     </div>
   )
