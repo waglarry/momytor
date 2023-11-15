@@ -188,8 +188,42 @@ class GetTeacherDetailsTest(TestCase):
         self.assertEqual(response.data['name'], 'John Teacher')
         self.assertEqual(response.data['teaching_class'], 1)
 
-
-        # Optional: Add more assertions based on your model fields
-
-        # Optional: Assert that the response contains the expected message
         self.assertEqual(response.data['message'], 'Teacher details retrieved successfully')
+        
+
+class MarkAttendanceTest(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.teacher_user = User.objects.create_user(username='teacher_user', password='teacher_password')
+        self.teacher = Teacher.objects.create(user=self.teacher_user, name='John Teacher')
+        self.classroom = Class.objects.create(name='Grade 10')
+        self.teacher.teaching_class = self.classroom
+        self.teacher.save()
+
+    def test_mark_attendance(self):
+        # Authenticate the teacher user
+        self.client.force_authenticate(user=self.teacher_user)
+
+        # Data for marking attendance
+        attendance_data = {
+            'date': '2023-11-15',
+            'student_attendance': [
+                {'student_id': 1, 'is_present': True},
+                # Add more student data as needed
+            ],
+        }
+
+        # Make a POST request to mark attendance
+        # MarkAttendanceTest
+        response = self.client.post('/mark_attendance/', data=attendance_data, format='json')
+
+
+        # Print the response content for debugging
+        print(response.content)
+
+        # Assert that the response status code is 200
+        self.assertEqual(response.status_code, 200)
+
+        # Optional: Assert other details in the response as needed
+
+        # Optional: Add more assertions based on your use case

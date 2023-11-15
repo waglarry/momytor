@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Parent, Teacher, Child
+from .models import Parent, Teacher, Child, Attendance
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -58,3 +58,10 @@ class ChildDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Child
         fields = ['first_name', 'last_name', 'gender', 'practice_area', 'profile_picture']
+        
+        
+
+class AttendanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attendance
+        fields = '__all__'

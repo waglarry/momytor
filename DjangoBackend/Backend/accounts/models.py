@@ -26,7 +26,7 @@ class Child(models.Model):
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    teaching_class = models.ForeignKey(Class, on_delete=models.CASCADE)
+    teaching_class = models.ForeignKey(Class, on_delete=models.SET_DEFAULT, default=1)
     profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
     is_parent = models.BooleanField(default=False)
     
@@ -35,9 +35,11 @@ class Attendance(models.Model):
     child = models.ForeignKey(Child, on_delete=models.CASCADE)
     date = models.DateField()
     is_present = models.BooleanField(default=False)
+    teaching_class = models.ForeignKey(Class, on_delete=models.SET_DEFAULT, default=1)
 
 
 class Performance(models.Model):
     child = models.OneToOneField(Child, on_delete=models.CASCADE)
     progress = models.TextField()
     total_performance = models.CharField(max_length=50)
+

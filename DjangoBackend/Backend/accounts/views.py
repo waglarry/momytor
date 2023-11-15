@@ -5,7 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Parent, Teacher, Child, Attendance
 from .serializers import UserSerializer, ParentSerializer,ChildDetailsSerializer, ParentProfileSerializer, TeacherDetailsSerializer
-
+from datetime import date
+from django.shortcuts import get_object_or_404
 
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
@@ -151,3 +152,51 @@ def get_child_details(request):
 
     serializer = ChildDetailsSerializer(child)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
+def get_attendance_details(request):
+    user = request.user
+
+    try:
+        teacher = Teacher.objects.get(user=user)
+        teaching_class = teacher.teaching_class
+        attendances = Attendance.objects.filter(teaching_class=teaching_class, date=date.today())
+        serializer = AttendanceSerializer(attendances, many=True)
+        return Response({'message': 'Attendance details retrieved successfully', 'attendances': serializer.data})
+    except Teacher.DoesNotExist:
+        return Response({'error': 'User is not a teacher'}, status=403)
+    
+    
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def mark_attendance(request):
+    teacher = request.user
+    try:
+        teaching_class = teacher.teacher.teaching_class
+    except Teacher.DoesNotExist:
+        return Response({'error': 'Teacher profile not found'}, status=404)
+
+    # Extract data from the request
+    attendance_data = request.data
+    date = attendance_data.get('date')
+    student_attendance = attendance_data.get('student_attendance', [])
+
+    for student_data in student_attendance:
+        student_id = student_data.get('student_id')
+        is_present = student_data.get('is_present', False)
+
+        # Use get_object_or_404 to retrieve the Child instance
+        student = get_object_or_404(Child, id=student_id, parent__child_classroom=teaching_class)
+
+        attendance_record, created = Attendance.objects.get_or_create(
+            child=student,
+            date=date,
+            defaults={'is_present': is_present}
+        )
+        if not created:
+            attendance_record.is_present = is_present
+            attendance_record.save()
+            
+    return Response({'message': 'Attendance marked successfully'})

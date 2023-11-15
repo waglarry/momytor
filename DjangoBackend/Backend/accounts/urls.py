@@ -9,6 +9,8 @@ from .views import (
     get_child_details,
     get_parent_details,
     get_teacher_details,
+    mark_attendance,
+    get_attendance_details
 )
 
 urlpatterns = [
@@ -21,4 +23,7 @@ urlpatterns = [
     path('get_teacher_details/', get_teacher_details, name='get_teacher_details'),
     path('get_parent_details/', get_parent_details, name='get_parent_details'),
     path('get_child_details/', get_child_details, name='get_child_details'),
+    path('mark_attendance/', mark_attendance, name='mark_attendance'),
+    path('get_attendance_details/', get_attendance_details, name='get_attendance_summary'),
+
 ]
