@@ -53,6 +53,10 @@
     line-height: 207.75%; /* 1.55813rem */
 }
 
+.support li {
+    margin-left: 1rem;
+}
+
 .support li, .support li .link {
     color: #FFF;
     font-family: sans-serif ,'Poppins';
