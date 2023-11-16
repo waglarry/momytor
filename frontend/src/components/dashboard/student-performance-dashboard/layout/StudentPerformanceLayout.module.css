@@ -1,0 +1,61 @@
+.mainBox {
+    height: calc(100vh - 80px);
+    padding: 2rem 0;
+}
+
+.cardsConteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.card {
+    width: 28.89306rem;
+    height: 18.6875rem;
+    flex-shrink: 0;
+    border-radius: 0.46856rem;
+    background: #FFF;
+    box-shadow: 0px 2.90291px 2.90291px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card .header {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    padding-left: 1rem;
+    background: #17A1FA;
+    box-shadow: 0px 2.90291px 2.90291px 0px rgba(0, 0, 0, 0.10);
+    border-top-right-radius: 0.46856rem;
+    border-top-left-radius: 0.46856rem;
+}
+
+.card .header .title {
+    color: #FFF;
+    font-family: sans-serif ,'Roboto';
+    font-size: 0.94356rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.033rem;
+}
+
+.card .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.progressRow {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    width: 250px;
+}

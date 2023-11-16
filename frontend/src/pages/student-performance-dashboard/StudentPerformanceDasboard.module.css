@@ -1,0 +1,96 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #1976D2;
+    position: fixed;
+    bottom: 0;
+    height: calc( 100% - 80px);
+    overflow: auto;
+    border-top: 1px solid #ccc;
+  }
+
+.profileBox {
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.username {
+    margin-top: 1rem;
+    color: #FFF;
+    text-align: center;
+    font-family: sans-serif ,'Roboto';
+    font-size: 1.39188rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+  
+
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #555;
+}
+
+  .links {
+    margin: 2rem .5rem;
+  }
+
+  .links li {
+    display: block;
+    background: #fff;
+    margin: 1.44rem 0;
+    padding: .5rem;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links li .link {
+    color: #000;
+  }
+  
+  .links li:hover {
+    background-color: #17A1FA;
+    color: white;
+    cursor: pointer;
+  }
+  
+  div.content {
+    margin-left: 250px;
+    padding: 1px 16px;
+    height: (1000px - 80px);
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
