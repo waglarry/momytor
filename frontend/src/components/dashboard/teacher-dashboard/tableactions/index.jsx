@@ -1,8 +1,11 @@
 import React from 'react'
 import classes from '../../../../css-modules/MantineInput.module.css';
-import { Button, Select } from '@mantine/core';
+import { Button, Modal, Select } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 const TableActionsTab = ({ childData, printTable }) => {
+
+    const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <div style={{
@@ -54,7 +57,12 @@ const TableActionsTab = ({ childData, printTable }) => {
                 classNames={classes}
                 // onChange={handleInputChange}
             />
-            <Button color='gray'>CREATE STUDENT</Button>
+
+            <Modal opened={opened} onClose={close} title="Create Student" centered>
+                <p>Hello</p>
+            </Modal>
+
+            <Button color='gray' onClick={open}>CREATE STUDENT</Button>
         </div>
     </div>
   )
