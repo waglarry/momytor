@@ -4,6 +4,7 @@ import LoginPage from "./pages/login"
 import ParentDashboard from "./pages/parent-dashboard"
 import SignupPage from "./pages/signup"
 import TeacherDashboard from "./pages/teacher-dashboard"
+import StudentPerformanceDashboard from "./pages/student-performance-dashboard"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard-teacher" element={<TeacherDashboard />} />
         <Route path="/dashboard-parent" element={<ParentDashboard />} />
+        <Route path="/performance" element={<StudentPerformanceDashboard />} />
       </Routes>
     </BrowserRouter>
   )
