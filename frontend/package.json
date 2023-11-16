@@ -17,6 +17,7 @@
     "@mantine/ds": "^7.2.1",
     "@mantine/hooks": "^7.2.1",
     "@mui/material": "^5.14.17",
+    "@mui/x-charts": "^6.18.1",
     "@mui/x-date-pickers": "^6.18.1",
     "@react-icons/all-files": "^4.1.0",
     "@tabler/icons-react": "^2.40.0",
