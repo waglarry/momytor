@@ -5,6 +5,7 @@ import ParentDashboard from "./pages/parent-dashboard"
 import SignupPage from "./pages/signup"
 import TeacherDashboard from "./pages/teacher-dashboard"
 import StudentPerformanceDashboard from "./pages/student-performance-dashboard"
+import AuthProvider from "./auth/authProvider"
 
 function App() {
 
@@ -14,9 +15,21 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/dashboard-teacher" element={<TeacherDashboard />} />
-        <Route path="/dashboard-parent" element={<ParentDashboard />} />
-        <Route path="/performance" element={<StudentPerformanceDashboard />} />
+        <Route path="/dashboard-teacher" element={
+          <AuthProvider>
+            <TeacherDashboard />
+          </AuthProvider>
+        } />
+        <Route path="/dashboard-parent" element={
+          <AuthProvider>
+            <ParentDashboard />
+          </AuthProvider>
+        } />
+        <Route path="/performance" element={
+          <AuthProvider>
+            <StudentPerformanceDashboard />
+          </AuthProvider>
+        } />
       </Routes>
     </BrowserRouter>
   )
