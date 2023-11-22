@@ -39,11 +39,6 @@ const Activities = () => {
                 </p>
             </div>
         </div>
-
-        <div>
-            <div className="leftCol"></div>
-            <div className="rightCol"></div>
-        </div>
     </section>
   )
 }

@@ -22,7 +22,7 @@ const FilterBar = ({ setSearchTerm }) => {
         margin: '.5rem'
     }}>
         <div style={{
-            marginRight: rem(50),
+            marginRight: rem(10),
             display: 'flex',
             justifyContent: 'center',
             gap: '.5rem'

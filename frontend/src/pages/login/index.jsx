@@ -1,44 +1,64 @@
 import React, { useState } from 'react'
 import Styles from './Login.module.css'
 import Brand from '../../assets/brand';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaRegUser } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { AiOutlineLock } from 'react-icons/ai';
-import { Select, TextInput, rem, Button } from '@mantine/core';
+import { Select, TextInput, rem, Button, Loader } from '@mantine/core';
 import classes from '../../css-modules/MantineInput.module.css';
 import { PasswordInput } from '@mantine/core';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
 import BackIcon from '../../components/backicon';
-import { BASE_URL } from '../../urls/auth';
+import * as yup from 'yup' 
 
 
 const LoginPage = () => {
 
   const [ formData, setFormData ] = useState({})
   const [ value, setValue ] = useState('');
+  const [ loading, setLoading ] = useState(false);
 
-  const navigate = useNavigate();
+  const userSchema = yup.object().shape({
+    // email can not be an empty string so we will use the required function
+    email: yup.string().email().required(),
+    // password can not be an empty string so we will use the required function. Also, we have used the `min` function to set the minimum length of the password. Yup passwords by default handle the conditions of at least one upper case, at least one lower case, and at least one special character in the password
+    password: yup.string().min(8).required(),
+  })
 
   const handleFormSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
-    
-      await axios.post('http://localhost:8000/api/v1/login', formData)
+
+    let dataObject = {
+      email: formData?.email,
+      password: formData?.password,
+    }
+
+    const isValid = await userSchema.isValid(dataObject)
+
+    if(isValid) {
+      await axios.post('http://localhost:8000/api/v1/login', dataObject)
       .then((response) => {
         alert(response?.data?.message)
 
         // Navigate user to dashboard if succesfully logged in
         navigate(`/dashboard-${value.toLowerCase()}`)
 
-        console.log(response);
-        localStorage.setItem('token', response?.data?.token)
+        localStorage.setItem('ACCESS_TOKEN_KEY', response?.data?.token)
+        setLoading(false)
       })
       .catch((error) => {
+        setLoading(false)
         console.log(error);
         alert(error.message)
       })
+    } else {
+      setLoading(false)
+      alert('Email or Password is wrong!')
+    }
 
       
   }
@@ -122,7 +142,7 @@ const LoginPage = () => {
               <Link className={Styles.forgotPassword} to={'/'}>Forgot your password?</Link>
             </div>
 
-            <Button variant="filled" radius="md" onClick={handleFormSubmit}>Sign In</Button>
+            <Button disabled={loading ? true : false} variant="filled" radius="md" onClick={handleFormSubmit}>{loading ? <Loader color="blue" size="sm" /> : 'Sign In'}</Button>
           </form>
         </div>
       </div>

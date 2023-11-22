@@ -9,6 +9,7 @@ import Services from '../services';
 import Activities from '../activities';
 import About from '../about';
 import Footer from '../footer';
+import { Link } from 'react-scroll';
 
 const HomePage = () => {
   return (
@@ -27,7 +28,14 @@ const HomePage = () => {
               performance of their wards anywhere anytime with ease.
             </p>
 
-            <Button variant="filled" size="md" radius="xs">Read more</Button>
+            <Link       
+              to="about" 
+              spy={true} 
+              smooth={true} 
+              offset={50} 
+              duration={500} >
+              <Button variant="filled" size="md" radius="xs">Read more</Button>
+            </Link>
           </div>
 
           <div className={Styles.heroImage}>

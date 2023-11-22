@@ -13,7 +13,7 @@ import {
 } from '@tabler/icons-react';
 import classes from './TeacherDashboardSidebar.module.css';
 import Brand from '../../../../assets/brand'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const data = [
   { link: '/', label: 'Dashboard', icon: IconHome },
@@ -27,6 +27,12 @@ const data = [
 
 const TeacherDashboardSidebar = () => {
   const [active, setActive] = useState('Billing');
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+    localStorage.removeItem("ACCESS_TOKEN_KEY")
+    navigate("/login")
+  }
 
   const links = data.map((item) => (
     <Link
@@ -54,15 +60,15 @@ const TeacherDashboardSidebar = () => {
       </div>
 
       <div className={classes.footer}>
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+        <div className={classes.link} onClick={(event) => event.preventDefault()}>
           <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
           <span>Change account</span>
-        </a>
+        </div>
 
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+        <div className={classes.link} onClick={() => handleLogout()}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
-        </a>
+        </div>
       </div>
     </nav>
   );

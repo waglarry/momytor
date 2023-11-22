@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Checkbox from '@mui/material/Checkbox';
 import { FiMail } from 'react-icons/fi';
 import { AiOutlineLock } from 'react-icons/ai';
-import { Button, TextInput, rem } from '@mantine/core';
+import { Button, Loader, TextInput, rem } from '@mantine/core';
 import { PasswordInput } from '@mantine/core';
 import { Modal } from '@mantine/core';
 import { MuiOtpInput } from 'mui-one-time-password-input'
@@ -20,6 +20,12 @@ const SignupPage = () => {
   const [ message, setMessage ] = useState('')
   const [ openedModal, setOpenedModal ] = useState(false);
   const [ otp, setOtp ] = useState('');
+  const [ loading, setLoading ] = useState(false);
+  const [checked, setChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   
   const navigate = useNavigate()
@@ -40,40 +46,59 @@ const SignupPage = () => {
     });
   };
 
+  const getStatus = () => {
+    if(formData?.email && !formData?.email.match(emailMatch)){
+      return true
+    } else {
+      return false
+    }
+  }
 
   const emailMatch = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     
     let validPassword = checkPasswordHealth(formData?.password);
 
     if(formData == null){
+      setLoading(false)
       alert("All fields are required!")
     } else {
       if(!formData?.email.match(emailMatch)) {
+        setLoading(false)
         alert("Please, provide a valid email.")
       } else {
         if(!validPassword.isValid) {
+          setLoading(false)
           alert(validPassword.errors)
         } else {
           if(formData?.password !== formData?.confirmPassword){
+            setLoading(false)
             alert("Password does not match.")
           } else {
-            await axios.post('http://localhost:8000/api/v1/verify', formData)
-            .then((response) => {
-              setOpenedModal( prev => !prev )
-              setMessage(response.data.message)
-              setFormData({
-                ...formData,
-                ['token']: response.data.token
+            if(!checked){
+              setLoading(false)
+              alert("Please read our Tearms and Conditions!")
+            } else {
+              await axios.post('http://localhost:8000/api/v1/verify', formData)
+              .then((response) => {
+                setOpenedModal( prev => !prev )
+                setMessage(response.data.message)
+                setFormData({
+                  ...formData,
+                  ['token']: response.data.token
+                })
+                setLoading(false)
               })
-            })
-            .catch((error) => {
-              console.log(error);
-              alert(error.message)
-              setMessage(error.data.message)
-            })
+              .catch((error) => {
+                setLoading(false)
+                console.log(error);
+                alert(error.message)
+                setMessage(error.data.message)
+              })
+            }
           }
         }
       }
@@ -125,9 +150,10 @@ const SignupPage = () => {
               <Button onClick={() => setOtp('')} className={Styles.clearButton} color="gray">Clear</Button>
           </Modal>
 
-          <form onSubmit={handleFormSubmit} className={Styles.formBox}>
+          <form className={Styles.formBox}>
             <div className={Styles.inputField}>
               <TextInput
+                error={getStatus()}
                 size='md'
                 required={true}
                 radius="md"
@@ -154,7 +180,7 @@ const SignupPage = () => {
                 size='md'
                 radius="md"
                 leftSectionPointerEvents="none"
-                leftSection={lockIcon}
+                leftSection={lockIcon}  
                 placeholder="Confirm Password"
                 name='confirmPassword'
                 onChange={handleInputChange}
@@ -162,11 +188,15 @@ const SignupPage = () => {
             </div>
 
             <div className={Styles.terms}>
-              <Checkbox size="small" />
+              <Checkbox 
+                size="small" 
+                checked={checked}
+                onChange={handleCheckboxChange}
+              />
               <span>By registering, you agree to the <Link className={Styles.link} to={'/'}>Terms of use</Link> and <Link className={Styles.link} to={'/'}>Privacy Policy</Link>. </span>
             </div>
 
-            <Button variant="filled" radius="md" onClick={handleFormSubmit}>Create an account</Button>
+            <Button variant="filled" radius="md" disabled={loading ? true : false} onClick={    handleFormSubmit}>{loading ? <Loader color="blue" size="sm" /> : 'Create an account'}</Button>
           </form>
         </div>
       </div>

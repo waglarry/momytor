@@ -4,9 +4,17 @@ import ProfilePicture from "../../assets/images/profile.png";
 import ArrowImage from '../../assets/icons/arrow.svg'
 import Performance from '../../assets/icons/performance.svg'
 import ParentDashboardLayout from "../../components/dashboard/parent-dashboard/layout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ParentDashboard = () => {
+
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+    localStorage.removeItem("ACCESS_TOKEN_KEY")
+    navigate("/login")
+  }
+  
   return (
     <>
       <div className={Styles.sidebar}>
@@ -25,7 +33,7 @@ const ParentDashboard = () => {
         </ul>
 
         <ul className={Styles.logoutAndPerformance}>
-            <li>
+            <li onClick={handleLogout}>
                 <div></div>
                 <Link className={Styles.link} to={'/'}>Logout</Link>
                 <img src={ArrowImage} alt="arrow" />

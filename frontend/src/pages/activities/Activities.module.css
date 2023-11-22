@@ -5,7 +5,10 @@
 .topContainer {
     display: flex;
     justify-content: space-around;
-    height: 20.25rem;
+}
+
+.topContainer:last-child {
+    margin-top: 3rem;
 }
 
 .leftCol {
@@ -62,4 +65,44 @@
     font-weight: 400;
     line-height: 98.25%; /* 0.92113rem */
     letter-spacing: 0.08438rem;
+}
+
+@media only screen and (max-width: 680px)  {
+    .topContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .topContainer:last-child {
+        flex-direction: column-reverse;
+        margin-top: 3rem;
+    }
+
+    .leftCol {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .rightCol img {
+        width: 250px;
+    }
+
+    .card {
+        width: 16.875rem;
+        height: 7.3125rem;
+        padding: .5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        font-size: .6rem;
+        width: 80%;
+        margin: 1.9rem auto 1rem;
+    }
 }

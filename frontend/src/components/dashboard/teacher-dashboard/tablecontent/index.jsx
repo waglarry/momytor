@@ -1,5 +1,5 @@
 import { Loader, Table } from '@mantine/core';
-import { Pagination, Button } from '@mantine/core';
+import { Button } from '@mantine/core';
 import Styles from './TableContent.module.css'
 
 const present = <Button variant="light" color="green">Present</Button>;

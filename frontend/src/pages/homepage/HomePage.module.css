@@ -61,13 +61,14 @@
         display: none;
     }
 
+    .hero {
+        align-items: center;
+        height: calc(70vh - 80px);
+    }
+
     .content {
         width: 100%;
         padding-left: 2rem;
-    }
-
-    .hero {
-        align-items: center;
     }
 
     .content .title {
