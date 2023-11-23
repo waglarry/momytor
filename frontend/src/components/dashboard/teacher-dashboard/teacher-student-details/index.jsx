@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Styles from './TeacherStudentDetails.module.css'
-import DeleteIcon from '../../../../assets/icons/delete-icon.svg'
+import { Progress } from '@mantine/core'
+import UserDisplay from '../userdisplay'
+// import DeleteIcon from '../../../../assets/icons'
 // import EditIcon from '../../assets/icons/edit-icon.svg'
 // import UploadIcon from '../../assets/icons/upload-icon.svg'
-import { Progress } from '@mantine/core';
-import UserDisplay from '../userdisplay';
 
 const TeacherStudentDetails = (data) => {
     
@@ -71,13 +71,13 @@ const TeacherStudentDetails = (data) => {
             </div>
             <div className={Styles.operationButtons}>
                 <button className={Styles.button}>
-                    <img src={DeleteIcon} alt="Upload Icon" />
+                    {/* <img src={DeleteIcon} alt="Upload Icon" /> */}
                 </button>
                 <button className={Styles.button}>
-                    <img src={DeleteIcon} alt="Upload Icon" />
+                    {/* <img src={DeleteIcon} alt="Upload Icon" /> */}
                 </button>
                 <button className={Styles.button}>
-                    <img src={DeleteIcon} alt="Upload Icon" />
+                    {/* <img src={DeleteIcon} alt="Upload Icon" /> */}
                 </button>
             </div>
           </div>
