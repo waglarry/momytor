@@ -21,7 +21,7 @@ const SignupPage = () => {
   const [ openedModal, setOpenedModal ] = useState(false);
   const [ otp, setOtp ] = useState('');
   const [ loading, setLoading ] = useState(false);
-  const [checked, setChecked] = useState(false);
+  const [ checked, setChecked ] = useState(false);
 
   const handleCheckboxChange = (event) => {
     setChecked(event.target.checked);
@@ -46,21 +46,13 @@ const SignupPage = () => {
     });
   };
 
-  const getStatus = () => {
-    if(formData?.email && !formData?.email.match(emailMatch)){
-      return true
-    } else {
-      return false
-    }
-  }
-
   const emailMatch = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-
+  const validPassword = checkPasswordHealth(formData?.password);
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setLoading(true)
     
-    let validPassword = checkPasswordHealth(formData?.password);
 
     if(formData == null){
       setLoading(false)
@@ -72,7 +64,7 @@ const SignupPage = () => {
       } else {
         if(!validPassword.isValid) {
           setLoading(false)
-          alert(validPassword.errors)
+          alert(validPassword?.errors)
         } else {
           if(formData?.password !== formData?.confirmPassword){
             setLoading(false)
@@ -94,7 +86,7 @@ const SignupPage = () => {
               })
               .catch((error) => {
                 setLoading(false)
-                console.log(error);
+                // console.log(error);
                 alert(error.message)
                 setMessage(error.data.message)
               })
@@ -153,7 +145,7 @@ const SignupPage = () => {
           <form className={Styles.formBox}>
             <div className={Styles.inputField}>
               <TextInput
-                error={getStatus()}
+                error={formData?.email && !formData?.email.match(emailMatch) ? "Invalid email" : null}
                 size='md'
                 required={true}
                 radius="md"
@@ -166,6 +158,7 @@ const SignupPage = () => {
             </div>
             <div className={Styles.inputField}>
               <PasswordInput
+                error={formData?.password && !validPassword.isValid ? "Weak password" : null}
                 size='md'
                 radius="md"
                 leftSectionPointerEvents="none"
@@ -177,6 +170,7 @@ const SignupPage = () => {
             </div>
             <div className={Styles.inputField}>
               <PasswordInput
+                error={formData?.confirmPassword && formData?.password !== formData?.confirmPassword ? "Passwords do not match" : null}
                 size='md'
                 radius="md"
                 leftSectionPointerEvents="none"

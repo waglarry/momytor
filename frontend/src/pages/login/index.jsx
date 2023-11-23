@@ -52,7 +52,7 @@ const LoginPage = () => {
       })
       .catch((error) => {
         setLoading(false)
-        console.log(error);
+        // console.log(error);
         alert(error.message)
       })
     } else {
